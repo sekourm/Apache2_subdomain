@@ -10,7 +10,7 @@ cd sites-available/
 
 - 000-default.conf
 
-```
+```shell
 <VirtualHost *:80>
         ServerAdmin webmaster@localhost
         DocumentRoot /var/www/html
