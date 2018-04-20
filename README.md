@@ -1,6 +1,6 @@
 - Create an apache2 subdomain
 
-```
+```shell
 cd etc/
 
 cd apache2/
@@ -43,7 +43,7 @@ emacs 001-monsite.conf
 
 - With laravel project
 
-```
+```shell
 <VirtualHost *:80>
         DocumentRoot /var/www/html/projets/dossier du site/public
         ServerName nomdusite.mennad-sekour.fr
@@ -59,7 +59,7 @@ sudo chmod 777 -R storage in project folder
 
 - With symfony project
 
-```
+```shell
 <VirtualHost *:80>
     ServerName nomdusite.mennad-sekour.fr
     ServerAlias nomdusite.mennad-sekour.fr
@@ -89,14 +89,14 @@ rm -rf app/logs/*
 
 - activate the file
 
-```
+```shell
 sudo a2ensite nom_du_fichier.conf
 service apache2 restart
 ```
 
 - Prohibit an ip pointing to our ip
 
-```
+```shell
 /etc/apache2/sites-available# emacs 000-default.conf 
 
 RewriteEngine on
