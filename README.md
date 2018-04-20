@@ -10,7 +10,7 @@ cd sites-available/
 
 - 000-default.conf
 
-<pre>
+<code>
 <VirtualHost *:80>
         ServerAdmin webmaster@localhost
         DocumentRoot /var/www/html
@@ -41,11 +41,11 @@ emacs 001-monsite.conf
         </Directory>
 </VirtualHost>
 
-</pre>
+</code>
 
 - With laravel project
 
-<pre>
+<code>
 <VirtualHost *:80>
         DocumentRoot /var/www/html/projets/dossier du site/public
         ServerName nomdusite.mennad-sekour.fr
@@ -56,12 +56,12 @@ emacs 001-monsite.conf
         </Directory>
 </VirtualHost>
 
-sudo chmod 777 -R storage dans le dossier du site
-</pre>
+sudo chmod 777 -R storage in project folder
+</code>
 
 - With symfony project
 
-<pre>
+<code>
 <VirtualHost *:80>
     ServerName nomdusite.mennad-sekour.fr
     ServerAlias nomdusite.mennad-sekour.fr
@@ -87,21 +87,21 @@ Don't forget to delete all cache !
 
 rm -rf app/cache/*
 rm -rf app/logs/*
-</pre>
+</code>
 
 - activate the file
 
-<pre>
+<code>
 sudo a2ensite nom_du_fichier.conf
 service apache2 restart
 </pre>
 
 - Prohibit an ip pointing to our ip
 
-<pre>
+<code>
 /etc/apache2/sites-available# emacs 000-default.conf 
 
 RewriteEngine on
 RewriteCond %{HTTP_HOST} !^www.mennad-sekour.fr$
 RewriteRule ^/?(.*) http://www.mennad-sekour.fr/$1 [QSA,R=301,L]
-</pre>
+</code>
