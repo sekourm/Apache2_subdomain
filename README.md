@@ -1,12 +1,12 @@
 - Create an apache2 subdomain
 
-<pre>
+```
 cd etc/
 
 cd apache2/
 
 cd sites-available/
-</pre>
+```
 
 - 000-default.conf
 
@@ -43,7 +43,7 @@ emacs 001-monsite.conf
 
 - With laravel project
 
-<code>
+```
 <VirtualHost *:80>
         DocumentRoot /var/www/html/projets/dossier du site/public
         ServerName nomdusite.mennad-sekour.fr
@@ -55,11 +55,11 @@ emacs 001-monsite.conf
 </VirtualHost>
 
 sudo chmod 777 -R storage in project folder
-</code>
+```
 
 - With symfony project
 
-<code>
+```
 <VirtualHost *:80>
     ServerName nomdusite.mennad-sekour.fr
     ServerAlias nomdusite.mennad-sekour.fr
@@ -85,21 +85,21 @@ Don't forget to delete all cache !
 
 rm -rf app/cache/*
 rm -rf app/logs/*
-</code>
+```
 
 - activate the file
 
-<code>
+```
 sudo a2ensite nom_du_fichier.conf
 service apache2 restart
-</pre>
+```
 
 - Prohibit an ip pointing to our ip
 
-<code>
+```
 /etc/apache2/sites-available# emacs 000-default.conf 
 
 RewriteEngine on
 RewriteCond %{HTTP_HOST} !^www.mennad-sekour.fr$
 RewriteRule ^/?(.*) http://www.mennad-sekour.fr/$1 [QSA,R=301,L]
-</code>
+```
